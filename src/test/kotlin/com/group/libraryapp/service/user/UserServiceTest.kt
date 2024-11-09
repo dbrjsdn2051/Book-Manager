@@ -47,7 +47,7 @@ class UserServiceTest @Autowired constructor(
         )
 
         // when
-        val results = userService.getUsers()
+        val results = userService.getUser()
 
         // then
         assertThat(results).hasSize(2)
@@ -59,7 +59,7 @@ class UserServiceTest @Autowired constructor(
     fun updateUserNameTest() {
         // given
         val savedUser = userRepository.save(User("userA", null))
-        val request = UserUpdateRequest(savedUser.id, "B")
+        val request = UserUpdateRequest(savedUser.id!!, "B")
 
         // when
         userService.updateUserName(request)
