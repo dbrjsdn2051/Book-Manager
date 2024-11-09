@@ -34,7 +34,7 @@ compileKotlin {
     }
 }
 
-compileTestKotlin{
+compileTestKotlin {
     kotlinOptions{
         jvmTarget = "11"
     }
