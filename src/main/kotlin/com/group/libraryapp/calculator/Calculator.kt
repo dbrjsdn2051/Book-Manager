@@ -1,8 +1,10 @@
 package com.group.libraryapp.calculator
 
-data class Calculator(
+class Calculator(
     private var number: Int
 ) {
+
+    val getNumber : Int get() = number
 
     fun add(operand: Int) {
         this.number += operand
