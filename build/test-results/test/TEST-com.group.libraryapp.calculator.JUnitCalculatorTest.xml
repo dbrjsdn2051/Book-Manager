@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.group.libraryapp.calculator.JUnitCalculatorTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2024-11-09T14:01:11" hostname="yugeon-uui-MacBookAir.local" time="0.025">
+<testsuite name="com.group.libraryapp.calculator.JUnitCalculatorTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2024-11-10T07:34:00" hostname="yugeon-uui-MacBookAir.local" time="0.024">
   <properties/>
-  <testcase name="divideTest()" classname="com.group.libraryapp.calculator.JUnitCalculatorTest" time="0.021"/>
+  <testcase name="divideTest()" classname="com.group.libraryapp.calculator.JUnitCalculatorTest" time="0.018"/>
   <testcase name="addTest()" classname="com.group.libraryapp.calculator.JUnitCalculatorTest" time="0.001"/>
   <testcase name="multiplyTest()" classname="com.group.libraryapp.calculator.JUnitCalculatorTest" time="0.0"/>
   <testcase name="divideExceptionTest()" classname="com.group.libraryapp.calculator.JUnitCalculatorTest" time="0.002"/>
-  <testcase name="minusTest()" classname="com.group.libraryapp.calculator.JUnitCalculatorTest" time="0.0"/>
+  <testcase name="minusTest()" classname="com.group.libraryapp.calculator.JUnitCalculatorTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

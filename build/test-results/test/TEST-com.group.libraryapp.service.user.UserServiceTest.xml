@@ -1,16 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.group.libraryapp.service.user.UserServiceTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2024-11-09T14:01:11" hostname="yugeon-uui-MacBookAir.local" time="0.036">
+<testsuite name="com.group.libraryapp.service.user.UserServiceTest" tests="6" skipped="0" failures="1" errors="0" timestamp="2024-11-10T07:34:02" hostname="yugeon-uui-MacBookAir.local" time="0.098">
   <properties/>
-  <testcase name="saveUserTest()" classname="com.group.libraryapp.service.user.UserServiceTest" time="0.006"/>
-  <testcase name="updateUserNameTest()" classname="com.group.libraryapp.service.user.UserServiceTest" time="0.006"/>
-  <testcase name="getUserTest()" classname="com.group.libraryapp.service.user.UserServiceTest" time="0.016"/>
-  <testcase name="deleteUserTest()" classname="com.group.libraryapp.service.user.UserServiceTest" time="0.005"/>
-  <system-out><![CDATA[2024-11-09 23:01:11.744  INFO 25246 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.group.libraryapp.service.user.UserServiceTest], using SpringBootContextLoader
-2024-11-09 23:01:11.745  INFO 25246 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.group.libraryapp.service.user.UserServiceTest]: no resource found for suffixes {-context.xml, Context.groovy}.
-2024-11-09 23:01:11.745  INFO 25246 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.group.libraryapp.service.user.UserServiceTest]: UserServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2024-11-09 23:01:11.747  INFO 25246 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.group.libraryapp.LibraryAppApplication for test class com.group.libraryapp.service.user.UserServiceTest
-2024-11-09 23:01:11.747  INFO 25246 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
-2024-11-09 23:01:11.747  INFO 25246 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@4548bfc7, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@557c0b65, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@3b303b78, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@685e97e0, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@68e8bbab, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5dfaa2f0, org.springframework.test.context.transaction.TransactionalTestExecutionListener@672ba9cc, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7bd6c35e, org.springframework.test.context.event.EventPublishingTestExecutionListener@564e0a6c, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@5eabcf77, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@647468a7, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@29f58b44, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@fcee97c, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@f1e5f85, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@48682f91]
+  <testcase name="saveUserTest()" classname="com.group.libraryapp.service.user.UserServiceTest" time="0.008"/>
+  <testcase name="updateUserNameTest()" classname="com.group.libraryapp.service.user.UserServiceTest" time="0.011"/>
+  <testcase name="getUserTest()" classname="com.group.libraryapp.service.user.UserServiceTest" time="0.008"/>
+  <testcase name="대출 기록이 없는 유저도 응답에 포함된다." classname="com.group.libraryapp.service.user.UserServiceTest" time="0.045"/>
+  <testcase name="대출 기록이 많은 유저의 응답이 정상 동작한다." classname="com.group.libraryapp.service.user.UserServiceTest" time="0.015">
+    <failure message="java.lang.AssertionError: &#10;Expected size: 1 but was: 3 in:&#10;[com.group.libraryapp.dto.user.response.UserLoanHistoryResponse@65a7bc80,&#10;    com.group.libraryapp.dto.user.response.UserLoanHistoryResponse@5b132063,&#10;    com.group.libraryapp.dto.user.response.UserLoanHistoryResponse@4b98c80c]" type="java.lang.AssertionError">java.lang.AssertionError: 
+Expected size: 1 but was: 3 in:
+[com.group.libraryapp.dto.user.response.UserLoanHistoryResponse@65a7bc80,
+    com.group.libraryapp.dto.user.response.UserLoanHistoryResponse@5b132063,
+    com.group.libraryapp.dto.user.response.UserLoanHistoryResponse@4b98c80c]
+	at com.group.libraryapp.service.user.UserServiceTest.getUserLoanHistoriesTest2(UserServiceTest.kt:122)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:99)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:79)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:75)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at jdk.proxy1/jdk.proxy1.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+</failure>
+  </testcase>
+  <testcase name="deleteUserTest()" classname="com.group.libraryapp.service.user.UserServiceTest" time="0.008"/>
+  <system-out><![CDATA[2024-11-10 16:34:02.545  INFO 29462 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.group.libraryapp.service.user.UserServiceTest], using SpringBootContextLoader
+2024-11-10 16:34:02.545  INFO 29462 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.group.libraryapp.service.user.UserServiceTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2024-11-10 16:34:02.545  INFO 29462 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.group.libraryapp.service.user.UserServiceTest]: UserServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-11-10 16:34:02.548  INFO 29462 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.group.libraryapp.LibraryAppApplication for test class com.group.libraryapp.service.user.UserServiceTest
+2024-11-10 16:34:02.549  INFO 29462 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2024-11-10 16:34:02.549  INFO 29462 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@312e8eaf, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@5c960f64, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@2f307fcc, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@3aec2f59, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@7f72855d, org.springframework.test.context.support.DirtiesContextTestExecutionListener@13f358f8, org.springframework.test.context.transaction.TransactionalTestExecutionListener@3f119b55, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@64dcfd09, org.springframework.test.context.event.EventPublishingTestExecutionListener@fefd4a2, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@6d2693f, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@352a8183, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@361d169a, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@47a68e3f, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@52288c65, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@33ef393a]
 Hibernate: 
     insert 
     into
@@ -38,7 +131,7 @@ Hibernate:
         userloanhi0_.id as id1_2_0_,
         userloanhi0_.id as id1_2_1_,
         userloanhi0_.book_name as book_nam2_2_1_,
-        userloanhi0_.is_return as is_retur3_2_1_,
+        userloanhi0_.status as status3_2_1_,
         userloanhi0_.user_id as user_id4_2_1_ 
     from
         user_loan_history userloanhi0_ 
@@ -94,7 +187,7 @@ Hibernate:
         userloanhi0_.id as id1_2_0_,
         userloanhi0_.id as id1_2_1_,
         userloanhi0_.book_name as book_nam2_2_1_,
-        userloanhi0_.is_return as is_retur3_2_1_,
+        userloanhi0_.status as status3_2_1_,
         userloanhi0_.user_id as user_id4_2_1_ 
     from
         user_loan_history userloanhi0_ 
@@ -140,7 +233,7 @@ Hibernate:
         userloanhi0_.id as id1_2_0_,
         userloanhi0_.id as id1_2_1_,
         userloanhi0_.book_name as book_nam2_2_1_,
-        userloanhi0_.is_return as is_retur3_2_1_,
+        userloanhi0_.status as status3_2_1_,
         userloanhi0_.user_id as user_id4_2_1_ 
     from
         user_loan_history userloanhi0_ 
@@ -152,7 +245,7 @@ Hibernate:
         userloanhi0_.id as id1_2_0_,
         userloanhi0_.id as id1_2_1_,
         userloanhi0_.book_name as book_nam2_2_1_,
-        userloanhi0_.is_return as is_retur3_2_1_,
+        userloanhi0_.status as status3_2_1_,
         userloanhi0_.user_id as user_id4_2_1_ 
     from
         user_loan_history userloanhi0_ 
@@ -162,6 +255,141 @@ Hibernate:
     delete 
     from
         user 
+    where
+        id=?
+Hibernate: 
+    delete 
+    from
+        user 
+    where
+        id=?
+Hibernate: 
+    insert 
+    into
+        user
+        (id, age, name) 
+    values
+        (default, ?, ?)
+Hibernate: 
+    select
+        user0_.id as id1_1_0_,
+        userloanhi1_.id as id1_2_1_,
+        user0_.age as age2_1_0_,
+        user0_.name as name3_1_0_,
+        userloanhi1_.book_name as book_nam2_2_1_,
+        userloanhi1_.status as status3_2_1_,
+        userloanhi1_.user_id as user_id4_2_1_,
+        userloanhi1_.user_id as user_id4_2_0__,
+        userloanhi1_.id as id1_2_0__ 
+    from
+        user user0_ 
+    left outer join
+        user_loan_history userloanhi1_ 
+            on user0_.id=userloanhi1_.user_id
+Hibernate: 
+    select
+        user0_.id as id1_1_,
+        user0_.age as age2_1_,
+        user0_.name as name3_1_ 
+    from
+        user user0_
+Hibernate: 
+    select
+        userloanhi0_.user_id as user_id4_2_0_,
+        userloanhi0_.id as id1_2_0_,
+        userloanhi0_.id as id1_2_1_,
+        userloanhi0_.book_name as book_nam2_2_1_,
+        userloanhi0_.status as status3_2_1_,
+        userloanhi0_.user_id as user_id4_2_1_ 
+    from
+        user_loan_history userloanhi0_ 
+    where
+        userloanhi0_.user_id=?
+Hibernate: 
+    delete 
+    from
+        user 
+    where
+        id=?
+Hibernate: 
+    insert 
+    into
+        user
+        (id, age, name) 
+    values
+        (default, ?, ?)
+Hibernate: 
+    insert 
+    into
+        user_loan_history
+        (id, book_name, status, user_id) 
+    values
+        (default, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        user_loan_history
+        (id, book_name, status, user_id) 
+    values
+        (default, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        user_loan_history
+        (id, book_name, status, user_id) 
+    values
+        (default, ?, ?, ?)
+Hibernate: 
+    select
+        user0_.id as id1_1_0_,
+        userloanhi1_.id as id1_2_1_,
+        user0_.age as age2_1_0_,
+        user0_.name as name3_1_0_,
+        userloanhi1_.book_name as book_nam2_2_1_,
+        userloanhi1_.status as status3_2_1_,
+        userloanhi1_.user_id as user_id4_2_1_,
+        userloanhi1_.user_id as user_id4_2_0__,
+        userloanhi1_.id as id1_2_0__ 
+    from
+        user user0_ 
+    left outer join
+        user_loan_history userloanhi1_ 
+            on user0_.id=userloanhi1_.user_id
+Hibernate: 
+    select
+        user0_.id as id1_1_,
+        user0_.age as age2_1_,
+        user0_.name as name3_1_ 
+    from
+        user user0_
+Hibernate: 
+    select
+        userloanhi0_.user_id as user_id4_2_0_,
+        userloanhi0_.id as id1_2_0_,
+        userloanhi0_.id as id1_2_1_,
+        userloanhi0_.book_name as book_nam2_2_1_,
+        userloanhi0_.status as status3_2_1_,
+        userloanhi0_.user_id as user_id4_2_1_ 
+    from
+        user_loan_history userloanhi0_ 
+    where
+        userloanhi0_.user_id=?
+Hibernate: 
+    delete 
+    from
+        user_loan_history 
+    where
+        id=?
+Hibernate: 
+    delete 
+    from
+        user_loan_history 
+    where
+        id=?
+Hibernate: 
+    delete 
+    from
+        user_loan_history 
     where
         id=?
 Hibernate: 
@@ -192,7 +420,7 @@ Hibernate:
         userloanhi0_.id as id1_2_0_,
         userloanhi0_.id as id1_2_1_,
         userloanhi0_.book_name as book_nam2_2_1_,
-        userloanhi0_.is_return as is_retur3_2_1_,
+        userloanhi0_.status as status3_2_1_,
         userloanhi0_.user_id as user_id4_2_1_ 
     from
         user_loan_history userloanhi0_ 
