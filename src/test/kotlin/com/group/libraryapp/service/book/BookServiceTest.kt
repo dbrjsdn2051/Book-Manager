@@ -31,6 +31,7 @@ class BookServiceTest @Autowired constructor(
 
     @AfterEach
     fun clean() {
+        println("==================CLEAN======================")
         bookRepository.deleteAll()
         userRepository.deleteAll()
     }
@@ -145,6 +146,6 @@ class BookServiceTest @Autowired constructor(
     }
 
     private fun assertCount(results: List<BookStatResponse>, type: BookType, count: Long) {
-        assertThat(results.first { results -> results.type == type }.count).isEqualTo(count)
+        assertThat(results.first { it -> it.type == type }.count).isEqualTo(count)
     }
 }
